@@ -9,7 +9,7 @@ public class UserManagement implements UserManagementInterface{
     this.username = username;
     this.password = password;
   }
-
+  
   public String getUsername() {
     return username;
   }
@@ -31,8 +31,8 @@ public class UserManagement implements UserManagementInterface{
     String username = getUsername();
     String password = getPassword();
 
-    for (int i = 0; i < Data.arrUsername.length; i++) {
-      if (Data.arrUsername[i].equals(username) && Data.arrPassword[i].equals(password)) {
+    for (int i = 0; i < Data.arrUsername.size(); i++) {
+      if (Data.arrUsername.get(i).equals(username) && Data.arrPassword.get(i).equals(password)) {
         return "Login Successful: " + username;
         }
       }

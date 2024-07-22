@@ -1,5 +1,4 @@
 import dataStatic.Room;
-
 public class Reservation implements RerservationInterface {
   private Integer userId;
   private Integer roomId;
@@ -7,6 +6,9 @@ public class Reservation implements RerservationInterface {
   private String beginReservation;
   private String endReservation;
   private String submitTransaction;
+
+  public Reservation() {
+  }
   
   public Reservation(Integer userId, Integer roomId, Integer statusId, String beginReservation, String endReservation,
     String submitTransaction) {
@@ -77,9 +79,9 @@ public class Reservation implements RerservationInterface {
     System.out.println("Nomor | User ID | Room ID | Status | Begin Reservation | End Reservation | Submit Transaction");
     System.out.println("-----------------------------------------------------------------------------------------------");
 
-    for (int i = 0; i < Room.user_id.length; i++) {
+    for (int i = 0; i < Room.user_id.size(); i++) {
       System.out.format("%d  |    %d   |     %d     |   %d     |     %s     |    %s    |   %s   \n", 
-        i + 1, Room.user_id[i], Room.room_id[i], Room.status_id[i], Room.begin_reservation[i], Room.end_reservation[i], Room.submit_transaction[i]);
+        i + 1, Room.user_id.get(i), Room.room_id.get(i), Room.status_id.get(i), Room.begin_reservation.get(i), Room.end_reservation.get(i), Room.submit_transaction.get(i));
     }
   }
 
@@ -88,11 +90,11 @@ public class Reservation implements RerservationInterface {
     System.out.println("\n Nomor | Room ID | Status | Begin Reservation | End Reservation ");
     System.out.println("---------------------------------------------------------------------");
     int countReservation = 0;
-    for (int i = 0; i < Room.room_id.length; i++) {
-      if (Room.room_id[i] == roomId) {
+    for (int i = 0; i < Room.room_id.size(); i++) {
+      if (Room.room_id.get(i).equals(roomId)) {
         countReservation++;
         System.out.format("%d     |    %d     |    %d    |     %s     |    %s    \n", 
-        i + 1, Room.room_id[i], Room.status_id[i], Room.begin_reservation[i], Room.end_reservation[i]);
+        i + 1, Room.room_id.get(i), Room.status_id.get(i), Room.begin_reservation.get(i), Room.end_reservation.get(i));
       }
     }
     System.out.println("----------------------------------------------------------------------");
