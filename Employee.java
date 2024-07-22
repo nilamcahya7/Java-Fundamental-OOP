@@ -1,9 +1,9 @@
-public class Employee{
+public class Employee {
   private String firstName;
   private String lastName;
   private String email;
   private String division;
-  
+
   public Employee(String firstName, String lastName, String email, String division) {
     this.firstName = firstName;
     this.lastName = lastName;
@@ -43,10 +43,16 @@ public class Employee{
     this.division = division;
   }
 
-  @Override
-  public String toString() {
-    return "Employee [firstName=" + getFirstName() + ", lastName=" + getLastName() + ", email=" + getEmail() + ", division=" + getDivision()+ "]";
+  public void employeeInfo(){
+    System.out.println("---Employee Info---");
+    System.out.println("First Name :" +  getFirstName());
+    System.out.println("Last Name : " + getLastName());
+    System.out.println("Email : " + getEmail());
+    System.out.println("Division : " + getDivision());
   }
 
-  
+  @Override
+  public String toString() {
+    return "Employee [firstName=" + getFirstName() + ", lastName=" + getLastName() + ", email=" + getEmail() + ", division=" + getDivision() + "]";
+  }
 }

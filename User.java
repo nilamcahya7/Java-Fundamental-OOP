@@ -1,6 +1,6 @@
 public class User extends Employee{
-  String username;
-  String password;
+  private String username;
+  private String password;
 
   public User(String firstName, String lastName, String email, String division, String username, String password) {
     super(firstName, lastName, email, division);
@@ -25,9 +25,15 @@ public class User extends Employee{
   }
 
   @Override
+  public void employeeInfo() {
+    System.out.println("---User Info---");
+    System.out.println("Username: " + getUsername());
+    System.out.println("Full Name :" +  getFirstName() + " " + getLastName());
+    System.out.println("Division : " + getDivision());
+  }
+
+  @Override
   public String toString() {
     return "User [username=" + username + ", password=" + password + "]";
   }
-
-  
 }

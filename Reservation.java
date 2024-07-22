@@ -82,4 +82,20 @@ public class Reservation implements RerservationInterface {
         i + 1, Room.user_id[i], Room.room_id[i], Room.status_id[i], Room.begin_reservation[i], Room.end_reservation[i], Room.submit_transaction[i]);
     }
   }
+
+  @Override
+  public void historyTransaction(Integer roomId) {
+    System.out.println("\n Nomor | Room ID | Status | Begin Reservation | End Reservation ");
+    System.out.println("---------------------------------------------------------------------");
+    int countReservation = 0;
+    for (int i = 0; i < Room.room_id.length; i++) {
+      if (Room.room_id[i] == roomId) {
+        countReservation++;
+        System.out.format("%d     |    %d     |    %d    |     %s     |    %s    \n", 
+        i + 1, Room.room_id[i], Room.status_id[i], Room.begin_reservation[i], Room.end_reservation[i]);
+      }
+    }
+    System.out.println("----------------------------------------------------------------------");
+    System.out.println("Total Reservations for Room ID " + roomId + ": " + countReservation);
+  }
 }
